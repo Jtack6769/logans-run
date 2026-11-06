@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07101d">
+  <title>The World According to Box | Logan’s Run</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --ice: #dff5ff;
+      --gold: #ffe08a;
+      --panel: rgba(10, 20, 35, .9);
+      --line: rgba(190, 224, 255, .25);
+      --muted: #bdcddd;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; background: #07101d; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: #f7f4ec;
+      font: 17px/1.65 Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(ellipse at 50% -12%, rgba(80, 160, 205, .3), transparent 50%),
+        radial-gradient(ellipse at 100% 48%, rgba(30, 80, 112, .16), transparent 42%),
+        linear-gradient(160deg, #101e30 0%, #07101d 58%, #03070d 100%);
+    }
+
+    .page { width: min(100% - 28px, 980px); margin: 0 auto; padding: 42px 0 60px; }
+    header { text-align: center; padding: 16px 10px 34px; }
+    .eyebrow { margin: 0 0 10px; color: var(--ice); letter-spacing: .22em; text-transform: uppercase; font-size: .76rem; font-weight: 700; }
+    h1 { margin: 0; color: var(--gold); font-size: clamp(2.4rem, 8vw, 5rem); line-height: 1.02; letter-spacing: -.035em; text-shadow: 0 0 24px rgba(118, 196, 255, .35); }
+    .subtitle { max-width: 680px; margin: 15px auto 0; color: #d5e3ef; font-size: clamp(1rem, 3vw, 1.2rem); }
+    .header-rule { width: min(150px, 35vw); height: 2px; margin: 24px auto 0; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    main { display: grid; gap: 20px; }
+    section { padding: clamp(18px, 4vw, 30px); border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(145deg, rgba(17, 32, 51, .96), var(--panel)); box-shadow: 0 18px 50px rgba(0, 0, 0, .22); }
+    section:first-child { border-color: rgba(255, 224, 138, .38); }
+    h2 { margin: 0 0 12px; color: var(--gold); font-size: clamp(1.35rem, 4vw, 1.8rem); letter-spacing: -.015em; }
+    h3 { margin: 22px 0 7px; color: var(--ice); font-size: 1.1rem; }
+    p { margin: 0 0 12px; }
+    p:last-child { margin-bottom: 0; }
+    .video-frame { position: relative; overflow: hidden; width: 100%; aspect-ratio: 16 / 9; border: 1px solid rgba(223, 245, 255, .28); border-radius: 14px; background: #02060b; box-shadow: 0 12px 35px rgba(0, 0, 0, .35); }
+    .video-frame video, .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    .video-frame video { object-fit: contain; background: #02060b; }
+    .video-fallback { position: absolute; inset: 0; display: grid; grid-template-rows: auto 1fr; background: #02060b; }
+    .video-fallback[hidden], .video-frame video[hidden] { display: none; }
+    .fallback-note { margin: 0; padding: 8px 12px; color: var(--muted); background: #101e30; font-size: .86rem; text-align: center; }
+    .video-fallback iframe { min-height: 0; }
+    .video-caption { margin-top: 12px; color: #c6d6e4; font-size: .95rem; }
+    .video-caption a { color: var(--ice); text-underline-offset: 3px; }
+    .video-label { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--ice); font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .video-label::before { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px rgba(255, 224, 138, .8); content: ""; }
+    ul { margin: 8px 0 0; padding-left: 1.25rem; }
+    li { margin: 7px 0; padding-left: 3px; }
+    .quote { margin: 14px 0; padding: 13px 17px; border-left: 3px solid var(--gold); border-radius: 0 9px 9px 0; color: #fff0bd; background: rgba(255, 224, 138, .07); font-style: italic; }
+    footer { padding: 26px 8px 0; color: #a9bac9; text-align: center; font-size: .9rem; }
+
+    @media (max-width: 520px) {
+      .page { width: min(100% - 18px, 980px); padding-top: 22px; }
+      section { border-radius: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <p class="eyebrow">A Logan’s Run character study</p>
+      <h1>The World According to Box</h1>
+      <p class="subtitle">A lonely machine, an empty food supply, and one very unsettling idea of what counts as a harvest.</p>
+      <div class="header-rule" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <section aria-labelledby="video-title">
+        <p class="video-label">The Ice Cave · Featured Video</p>
+        <h2 id="video-title">Whatever Happened to Box?</h2>
+        <div class="video-frame">
+          <video id="box-video" controls playsinline preload="metadata" aria-label="Featured video about Box from Logan’s Run">
+            <source src="20261105_191529-CINEMATIC.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+          <div class="video-fallback" id="youtube-fallback" hidden>
+            <p class="fallback-note">The local video is unavailable. Watch the featured video on YouTube instead.</p>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/RcOTko20ZF8"
+              title="Whatever Happened to Box from Logan’s Run? — Dan Monroe / Movies, Music & Monsters"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <p class="video-caption">The page plays the local MP4 first. If it is unavailable or cannot be played, it offers the YouTube video instead. Keep <code>20261105_191529-CINEMATIC.mp4</code> beside this HTML file to use the local video.</p>
+      </section>
+
+      <section aria-labelledby="film-title">
+        <h2 id="film-title">Box in the 1976 Film</h2>
+        <p>In <em>Logan’s Run</em>, Box is the eerie machine Logan 5 and Jessica 6 encounter in the frozen caverns while searching for Sanctuary. Roscoe Lee Browne voiced and performed the character.</p>
+        <h3>Built to bring food back</h3>
+        <p>Box was sent outside the domed city to collect seafood and other marine food for its people. Left alone for a long time, it developed a theatrical personality and filled its icy cavern with sculptures of birds.</p>
+        <h3>When the food stopped coming</h3>
+        <p>Box proudly lists its stores:</p>
+        <blockquote class="quote">“Fish, plankton, sea greens and protein from the sea. Fresh as harvest day.”</blockquote>
+        <p>Then it explains that the food supply ended. When human fugitives began arriving through the tunnels, Box treated them as a substitute harvest and froze them for storage. Logan and Jessica fight to escape, and the cavern collapses around Box.</p>
+      </section>
+
+      <section aria-labelledby="novel-title">
+        <h2 id="novel-title">The Novel’s Different Box</h2>
+        <p>Box is portrayed very differently in William F. Nolan and George Clayton Johnson’s 1967 novel. There, Box is a human criminal exiled to an ice wasteland—not the food-collecting machine from the film.</p>
+      </section>
+
+      <section aria-labelledby="story-title">
+        <h2 id="story-title">Why the Ice Cave Matters</h2>
+        <ul>
+          <li>Logan and Jessica think they may have reached the legendary Sanctuary.</li>
+          <li>Box’s frozen collection reveals that the tunnel is another deadly trap.</li>
+          <li>Escaping the cave sends them toward the outside world, a place they have never seen.</li>
+        </ul>
+      </section>
+    </main>
+    <footer>Thanks for visiting the world according to Box.</footer>
+  </div>
+  <script>
+    const boxVideo = document.getElementById('box-video');
+    const youtubeFallback = document.getElementById('youtube-fallback');
+
+    boxVideo.addEventListener('error', () => {
+      boxVideo.hidden = true;
+      youtubeFallback.hidden = false;
+    });
+  </script>
+</body>
+</html>
