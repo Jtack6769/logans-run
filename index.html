@@ -1,491 +1,246 @@
 <!doctype html>
 <html lang="en">
 <head>
-  [![Jekyll site CI](https://github.com/Jtack6769/qcevent/actions/workflows/jekyll-docker.yml/badge.svg)](https://github.com/Jtack6769/qcevent/actions/workflows/jekyll-docker.yml)
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#071a3b">
-<meta name="description" content="Step inside 💠 playing the ultimate game Quote Challenge!">
-<link rel="manifest" href="manifest.webmanifest">
-<title>Quote Challenge — Theater Entrance</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="Touch down on the Moon for the Logan's Run Quote Challenge.">
+<title>Quote Challenge | On the Moon</title>
 <style>
-:root{--blue:#0755bd;--blue2:#031c48;--gold:#ffe34d;--cream:#fff3c6;--ink:#090b12}
-*{box-sizing:border-box}html{min-height:100%;background:#020309;color:var(--cream);font-family:system-ui,-apple-system,Segoe UI,sans-serif}body{margin:0;min-height:100svh;background:radial-gradient(ellipse at 50% 0,#132d55 0,#050812 52%,#020309 100%)}a{color:inherit}
-.shell{width:min(100%,1536px);margin:auto;padding:0 0 18px}.stage{position:relative;width:100%;aspect-ratio:3/2;overflow-x:hidden;background:#050505;isolation:isolate}.theater{display:block;width:100%;height:100%;object-fit:cover}
-.marquee{position:absolute;z-index:2;left:21.5%;top:20.5%;width:56%;height:4.3%;display:flex;align-items:center;overflow:hidden;border:clamp(2px,.34vw,5px) solid #ffd844;border-radius:3px;background:linear-gradient(180deg,#1371e5 0%,#0644a6 46%,#042863 100%);box-shadow:0 0 0 2px #062052,0 0 22px #2684ffb8,inset 0 0 15px #3c91ff;pointer-events:none}
-.marquee:before,.marquee:after{content:"✦  ✦  ✦  ✦  ✦";position:absolute;z-index:2;top:50%;transform:translateY(-50%);color:var(--gold);font-size:clamp(7px,1.05vw,16px);letter-spacing:.35em;text-shadow:0 0 8px #ffd94d}.marquee:before{left:1.2%}.marquee:after{right:1.2%}
-.marquee-track{display:flex;align-items:center;white-space:nowrap;min-width:max-content;animation:marquee 42s linear infinite;padding-left:100%;font:900 clamp(12px,2.1vw,32px)/1 Georgia,"Times New Roman",serif;letter-spacing:.11em;color:var(--gold);text-shadow:0 2px 0 #5b3600,0 0 10px #ffdf54;padding-right:100%}@keyframes marquee{to{transform:translateX(-100%)}}
-.door{position:absolute;z-index:3;top:39%;height:39%;width:4.2%;border-radius:16px;display:grid;place-items:center;text-decoration:none;color:transparent}.door.one{left:30.2%}.door.two{left:49.3%}.door:focus-visible,.portrait:focus-visible,.report:focus-visible{outline:4px solid gold;outline-offset:3px}
-.portrait{position:absolute;z-index:4;left:23.5%;top:52%;width:5.3%;height:13%;border:0;border-radius:40%;background:transparent;cursor:pointer;touch-action:manipulation}.portrait:focus-visible{outline-color:var(--gold);background:#ffe34d20}
-.report{position:absolute;z-index:5;right:1.1%;bottom:1.2%;display:grid;place-items:center;min-width:55px;min-height:48px;padding:7px 12px;border:2px solid var(--gold);border-radius:12px;background:#081936;color:var(--cream);font-size:24px;text-decoration:none;filter:drop-shadow(0 0 6px #050505) drop-shadow(0 0 5px #ffd51c);transition:transform .15s}.report:hover{transform:scale(1.06)}
-.stage-title{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.controls{display:flex;justify-content:center;align-items:center;gap:clamp(8px,1.3vw,18px);flex-wrap:wrap;padding:14px 12px 10px;background:linear-gradient(180deg,#071a39,#030815);border-top:2px solid #1377ed;box-shadow:0 -4px 24px #0867df40}.control{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:10px 18px;border:2px solid var(--gold);border-radius:9px;background:linear-gradient(180deg,#0a56b7,#06285f);color:var(--cream);text-decoration:none;font-weight:900;letter-spacing:.07em;text-shadow:0 2px #061632;box-shadow:0 4px 0 #04142f,0 0 13px #1784ff62;cursor:pointer}.control:hover{background:linear-gradient(180deg,#1478ed,#073f91);transform:translateY(-1px)}.control:focus-visible{outline:3px solid white;outline-offset:3px}.control svg{width:23px;height:23px;flex:none}.control .sub{display:block;font-size:10px;font-weight:600;letter-spacing:.08em;color:#c8dcff}.install{min-width:195px}
-.status{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;padding:2px 12px 13px;text-align:center;font-size:12px;color:#d7e3fa}.version{color:#9db8df;letter-spacing:.13em}.counter{border:1px solid #5a83bb;border-radius:999px;background:#081936;padding:5px 11px;color:#ffeb91;font-weight:800}
-.qc-marquee{overflow:hidden;background:repeating-linear-gradient(135deg,#ff8800 0px,#ff8800 22px,#111 22px,#111 44px);border:3px solid #ffcc00;border-radius:8px;padding:10px 0;margin:12px auto;width:calc(100% - 24px)}.qc-marquee-text{display:block;width:max-content;white-space:nowrap;color:white;font:bold 18px Arial,sans-serif;text-shadow:2px 2px 3px #000,-1px -1px 3px #000;animation:qc-scroll 16s linear infinite}@keyframes qc-scroll{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
-.coming-marquee{max-width:500px;margin:15px auto;text-align:center;perspective:1000px}.marquee-heading{background:#080808;color:#ffcc00;border:3px solid #ff9900;padding:10px;font-size:22px;font-weight:bold;letter-spacing:2px;text-shadow:0 0 12px orange}.movie-flipper{position:relative;height:230px;margin-top:8px;transform-style:preserve-3d;transition:transform 1.2s ease-in-out}.movie-flipper.flipped{transform:rotateY(180deg)}.movie-face,.poster-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:3px solid gold;border-radius:10px;background:#090909}.movie-face{color:#ffcc00;font-size:28px;font-weight:900;text-shadow:0 0 15px orange}.poster-face{transform:rotateY(180deg);overflow:hidden}.poster-face img{width:100%;height:100%;object-fit:contain}
-.next-wrap{text-align:center;margin:18px auto 24px}.next-button{display:inline-block;background:#0066ff;color:#ffeb00;padding:14px 28px;border:3px solid #ffeb00;border-radius:10px;font-weight:900;font-size:20px;text-align:center;text-decoration:none;line-height:1.5;position:relative;z-index:10;box-shadow:0 0 14px #1478ed}.next-button span{display:block}.next-button:focus-visible{outline:3px solid white;outline-offset:4px}
-.poster-wall{position:relative;margin:16px 12px 0;padding:24px clamp(14px,4vw,52px) 38px;border:3px solid #805c22;border-radius:14px;background:radial-gradient(ellipse at 50% 0,#28446a 0,#0b1424 58%,#060910 100%);box-shadow:inset 0 0 0 3px #d0a54850,0 14px 35px #000;overflow:hidden}.poster-wall:before{content:"";position:absolute;inset:9px;border:1px solid #e3bd5f55;border-radius:9px;pointer-events:none}.wall-title{position:relative;margin:0 auto 18px;width:max-content;max-width:100%;padding:9px 22px;border:2px solid var(--gold);background:linear-gradient(180deg,#104a99,#061b3b);color:var(--gold);font:900 clamp(16px,2.2vw,27px)/1.2 Georgia,"Times New Roman",serif;text-align:center;letter-spacing:.13em;text-shadow:0 2px 0 #372900}.poster-display{position:relative;display:flex;align-items:flex-start;justify-content:center;gap:clamp(16px,5vw,78px);min-height:370px}.poster-card{position:relative;width:min(31%,310px);margin:0;padding:10px 10px 0;border:7px ridge #d9b354;background:#14100b;box-shadow:0 12px 24px #000c,0 0 14px #e5bd5b48;transform:rotate(-2deg)}.poster-card:nth-child(2){margin-top:30px;transform:rotate(2.4deg)}.poster-card img{display:block;width:100%;height:clamp(245px,39vw,430px);object-fit:contain;background:#080b12}.plaque{position:relative;margin:12px -2px 0;padding:9px 7px 11px;border:2px solid #c59a42;background:linear-gradient(180deg,#152c4b,#08152a);color:#fff0bd;text-align:center;box-shadow:inset 0 0 0 2px #5c4525;font-family:Georgia,"Times New Roman",serif;font-weight:900;line-height:1.2}.plaque strong{display:block;font-size:clamp(12px,1.7vw,19px)}.plaque span{display:block;margin-top:3px;color:var(--gold);font-size:clamp(13px,1.5vw,18px);letter-spacing:.16em}.poster-note{margin:27px auto 0;max-width:760px;text-align:center;color:#d6e2f9;font-size:14px}.poster-note strong{color:#ffe378}.footer-note{text-align:center;padding:16px 10px;color:#96a8c3;font-size:11px}
-@media(max-width:650px){.shell{padding-bottom:10px}.controls{padding:10px 7px;gap:8px}.control{padding:9px 12px;font-size:13px;min-height:46px}.install{min-width:0}.control .sub{font-size:9px}.status{font-size:11px;gap:8px}.poster-wall{margin:10px 7px 0;padding:20px 10px 25px}.poster-display{gap:14px;min-height:0}.poster-card{width:43%;padding:6px 6px 0;border-width:5px}.poster-card:nth-child(2){margin-top:24px}.poster-card img{height:clamp(210px,58vw,330px)}.plaque{padding:7px 4px 8px}.wall-title{margin-bottom:12px;padding:7px 12px}.poster-note{font-size:12px;padding:0 8px}.marquee-heading{font-size:18px}.movie-flipper{height:200px}}
-@media(max-width:380px){.control{padding:8px;font-size:11px}.marquee-track{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.marquee-track,.qc-marquee-text{animation:none}.marquee-track{min-width:100%;justify-content:center;padding:0}.marquee:before,.marquee:after{display:none}.movie-flipper{transition:none}}
-</style>
-<link rel="stylesheet" href="assets/eggs.css">
-<style id="qc-suggestion-position-fix">
-.stage .theater-suggestions-wrapper{position:absolute;z-index:7;left:43.3%;top:62%;bottom:auto;width:5.4%;transform:translateX(-50%);text-align:center}
-.stage .suggestion-box-art{display:block;width:100%;height:auto;border:0;padding:0;background:transparent;cursor:pointer;filter:none}
-.stage .suggestion-box-art img{width:100%;height:auto;display:block;mix-blend-mode:multiply}
-.stage .suggestion-card{position:absolute;bottom:110%;left:50%;width:min(310px,75vw);min-width:220px;transform:translateX(-50%);z-index:20}
-.stage .suggestion-card.hidden{display:none;pointer-events:none}
-.stage .suggestion-box-art:focus-visible{outline:3px solid gold}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#02040a;color:#fff;font-family:system-ui,Arial,sans-serif}
+body{padding-bottom:24px}
+.moon-stage{position:relative;width:100%;max-width:1648px;aspect-ratio:1648/928;margin:0 auto;background:radial-gradient(circle at 50% 25%,#132548 0%,#060b18 58%,#02040a 100%);overflow:hidden}
+/* Optional: if you have your own moon background image, remove the <svg class="moon-backdrop"> below and uncomment this:
+.moon-stage{background:#02040a url('moon-stage.png') center/100% 100% no-repeat}
+*/
+.moon-backdrop{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+.door-link{position:absolute;display:block;top:43.3%;height:43.8%;z-index:2;cursor:pointer;border-radius:14px;transition:box-shadow .2s ease,background-color .2s ease}
+.door-one{left:32.5%;width:14.4%}
+.door-two{left:52.9%;width:13.8%}
+.door-link:hover,.door-link:focus-visible{background-color:#7fd4ff18;box-shadow:0 0 22px #7fd4ff55,inset 0 0 18px #ffdf8444}
+.door-link::after{content:attr(data-label);position:absolute;left:50%;bottom:8%;transform:translateX(-50%);width:max-content;max-width:98%;padding:4px 7px;border:1px solid #9be2ff;border-radius:6px;background:#060d1ce6;color:#ffdf84;font-size:clamp(8px,1.1vw,14px);font-weight:800;letter-spacing:.06em;text-align:center;white-space:nowrap;opacity:0;transition:opacity .18s ease}
+.door-link:hover::after,.door-link:focus-visible::after{opacity:1}
+.door-link:focus-visible{outline:3px solid #fff39b;outline-offset:2px}
+.below-stage{position:relative;width:min(1500px,96%);margin:18px auto 0;padding:14px;display:grid;grid-template-columns:minmax(180px,250px) minmax(0,1fr);gap:16px;align-items:stretch;border:1px solid #8bb9e077;border-radius:24px;background:radial-gradient(ellipse 85% 75% at 72% 4%,#3b75c044,transparent 72%),linear-gradient(180deg,#12243f 0%,#060e1d 48%,#02050c 100%);box-shadow:0 12px 36px #000b,inset 0 1px #ffffff20}
+.navigation,.viewer-panel{position:relative;isolation:isolate;overflow:hidden;min-width:0;border:1px solid #8bb9e077;border-radius:22px;background:radial-gradient(ellipse 110% 52% at 72% 16%,#3f7ab94a,transparent 72%),linear-gradient(160deg,#0f1f38,#040913 76%);box-shadow:0 8px 28px #0009,inset 0 1px #ffffff20}
+.navigation{padding:18px}
+.navigation h2,.viewer-panel h2{margin:0 0 12px;color:#ffdf84;font-size:20px}
+.navigation p{margin:0 0 14px;color:#c8d1e4;font-size:14px;line-height:1.5}
+.nav-links{display:grid;gap:10px}
+.nav-links a{display:block;padding:12px 14px;border:1px solid #92c4e077;border-radius:12px;background:linear-gradient(180deg,#517ca856 0%,#1b3c63 12%,#10233e 54%,#07152a 100%);box-shadow:inset 0 1px 1px #e7f7ff77,inset 0 -8px 14px #0005;color:#ffe7a0;text-decoration:none;font-weight:700;transition:background .18s ease,transform .18s ease,border-color .18s ease}
+.nav-links a:hover,.nav-links a:focus-visible,.picture-slot:hover,.picture-slot:focus-visible{background:linear-gradient(180deg,#527ba6,#234d7c 40%,#0b2447);border-color:#b5e2ff;box-shadow:inset 0 1px 2px #e7f7ff99,0 0 14px #72bbff33}
+.nav-links a:hover,.nav-links a:focus-visible{transform:translateX(2px)}
+.nav-links a:focus-visible,.picture-slot:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.picture-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:12px}
+.picture-slot{padding:9px 4px;border:1px solid #92c4e077;border-radius:12px;background:linear-gradient(180deg,#517ca856 0%,#1b3c63 12%,#10233e 54%,#07152a 100%);color:#ffe7a0;font:700 13px/1.3 system-ui,Arial,sans-serif;cursor:pointer;transition:background .18s ease,border-color .18s ease}
+.viewer-panel{display:flex;flex-direction:column;padding:18px}
+.viewer-panel h2{margin-bottom:10px}
+.viewer-panel iframe{display:block;flex:1;width:100%;min-height:560px;border:1px solid #8ab7e088;border-radius:14px;background:#03050b;box-shadow:inset 0 0 15px #000,0 0 0 1px #0008,0 6px 16px #0008}
+@media(max-width:700px){.below-stage{grid-template-columns:1fr;margin-top:12px}.navigation{padding:14px}.nav-links{grid-template-columns:repeat(2,minmax(0,1fr))}.viewer-panel{min-height:520px;padding:14px}}
+@media(max-width:420px){.nav-links{grid-template-columns:1fr}.viewer-panel{min-height:440px}.viewer-panel iframe{min-height:380px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
-  <!-- ========================================== -->
-<!-- 2. STYLING (MATCHED TO YOUR THEATER THEME) -->
-<!-- ========================================== -->
-<style>
-/* Position the box perfectly right in the center "crack" between the doors */
-.theater-suggestions-wrapper {
-  position: absolute;
-  z-index: 4;          /* Aligns with your portrait layer depth */
-  bottom: 1.2%;        /* Matches the exact bottom line from your code */
-  left: 50%;           /* Centers it precisely between left (0%) and door two (49.3%) */
-  transform: translateX(-50%);
-  width: 14%;          /* Clean layout width scaling for the bronze asset */
-  text-align: center;
-}
-  <iframe src="http://free.timeanddate.com/clock/iao0sedj/n805/fn5/fs15/fc880808/tcfff77e/pcfff66e3/ftb" frameborder="0" width="90" height="20"></iframe>
-  
-
-/* The actual bronze box art interaction styling */
-.suggestion-box-art {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-  filter: drop-shadow(0 0 4px rgba(0,0,0,0.6));
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-
-/* A gold glow on hover matching your focus-visible styles */
-.suggestion-box-art:hover {
-  transform: scale(1.03);
-  filter: drop-shadow(0 0 6px #ffe34d) drop-shadow(0 0 5px #ffe34d);
-}
-
-/* The card overlay styled to match your dark/gold theater theme */
-.suggestion-card {
-  position: absolute;
-  bottom: 115%; /* Spawns neatly right above the bronze box */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 260px;
-  background: #081936; /* Your exact deep blue canvas color */
-  border: 2px solid #ffe34d; /* Your exact gold accent color */
-  border-radius: 12px; /* Matches your code's 12px border-radius standard */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-  padding: 14px;
-  text-align: left;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-/* Invisible state when closed */
-.suggestion-card.hidden {
-  opacity: 0;
-  transform: translateX(-50%) translateY(15px);
-  pointer-events: none;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.card-header h3 {
-  margin: 0;
-  color: #ffe34d; /* Gold header text */
-  font-size: 14px;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.close-card-btn {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #ffe34d;
-  padding: 0;
-  line-height: 1;
-}
-
-.card-body textarea {
-  width: 100%;
-  height: 80px;
-  background: #040d1c; /* Even deeper blue for text contrast */
-  color: #ffffff;
-  border: 1px solid rgba(255, 227, 77, 0.4);
-  border-radius: 6px;
-  padding: 8px;
-  font-size: 13px;
-  resize: none;
-  box-sizing: border-box;
-  outline: none;
-}
-
-.card-body textarea:focus {
-  border-color: #ffe34d;
-}
-
-.submit-card-btn {
-  width: 100%;
-  background: #ffe34d; /* Solid gold button */
-  color: #081936; /* Dark blue text */
-  border: none;
-  padding: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-top: 8px;
-}
-
-.submit-card-btn:hover {
-  background: #fff; /* Turns clean white on hover */
-}
-</style>
-
-<!-- ========================================== -->
-<!-- 3. THE TRIGGER ENGINE (JAVASCRIPT)        -->
-<!-- ========================================== -->
-<script>
-function toggleSuggestionCard(force) {
-  const card=document.getElementById('suggestionCard');
-  const open=typeof force==='boolean'?force:card.classList.contains('hidden');
-  card.classList.toggle('hidden',!open);
-  document.getElementById('suggestionTrigger').setAttribute('aria-expanded',String(open));
-  if(open) document.getElementById('suggestionText').focus();
-}
-document.addEventListener('DOMContentLoaded',()=>{
-  document.getElementById('suggestionTrigger').addEventListener('click',()=>toggleSuggestionCard());
-  document.getElementById('closeSuggestion').addEventListener('click',()=>toggleSuggestionCard(false));
-  document.getElementById('suggestionForm').addEventListener('submit',e=>{
-    e.preventDefault();
-    const msg=document.getElementById('suggestionText').value.trim();
-    if(!msg)return;
-    window.location.href='mailto:QcChallenger67@gmail.com?subject='+encodeURIComponent('Quote Challenge theater suggestion')+'&body='+encodeURIComponent(msg);
-  });
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleSuggestionCard(false)});
-});
-</script>
-  
 <body>
-<main class="shell">
-<h1 class="stage-title">Quote Challenge theater entrance</h1>
-<section class="stage" aria-label="Theater entrance">
-<img class="theater" src="" alt="A grand movie theater entrance with red carpet, two player doors, movie posters, and a shadowed hidden portrait.">
-<div class="marquee" aria-label="Theater marquee"><span class="marquee-track">WELCOME TO QUOTE CHALLENGE 6.5&nbsp; ✦ &nbsp;&nbsp  ✦ REMEMBER TO LOVE YOUR NEIGHBOR AS YOU DO YOURSELF&nbsp;</span></div>
-<div class="theater-suggestions-wrapper">
-<button class="suggestion-box-art" type="button" id="suggestionTrigger" aria-haspopup="dialog" aria-controls="suggestionCard" aria-expanded="false"><img src="download (2).jpeg" alt="Suggestion box"></button>
-<div id="suggestionCard" class="suggestion-card hidden" role="dialog" aria-modal="false" aria-label="Submit theater suggestion">
-<div class="card-header"><h3>Submit Theater Suggestion</h3><button type="button" class="close-card-btn" id="closeSuggestion" aria-label="Close">×</button></div>
-<form id="suggestionForm"><div class="card-body"><textarea id="suggestionText" name="player_suggestion" placeholder="Type your suggestion here..." required></textarea></div><div class="card-footer"><button type="submit" class="submit-card-btn">Send Suggestion</button></div></form>
-</div></div>
-<a class="door one" href="one-player.html" aria-label="Enter One Player"></a>
-<a class="door two" href="two-player.html" aria-label="Enter Two Players"></a>
-<a class="portrait" data-egg="creator" data-points="20" data-label="You found the inventor’s photo!" href="download (2).jpeg" aria-label="A hidden portrait of the creator. Find it for a bonus."></a>
-<a class="report" href="mailto:QcChallenger67@gmail.com?subject=Quote%20Challenge%20bug%20report" aria-label="Report a bug"><span aria-hidden="true">🪳</span></a>
-</section>
-<div class="qc-marquee"><span class="qc-marquee-text">🚧 QUOTE CHALLENGE IS HARD AT WORK BRINGING YOU ENTERTAINMENT FROM YESTERDAY ⏮️ TODAY 📅 AND THE FUTURE ♾️ PLEASE CHECK BACK OFTEN *** NEXT MONTH *** 🏃 LOGAN'S RUN 💃 🚧</span></div>
-<nav class="controls" aria-label="Quote Challenge options">
-<a class="control" href="one-óplayer.html#addForm">ADD QUOTES</a>
-<a class="control" href="one-player.html">ONE PLAYER</a>
-<a class="control" href="two-player.html">TWO PLAYER</a>
-<button class="control install" id="addIcon" type="button" aria-label="Add a Quote Challenge icon to this device"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="3" y="3" width="42" height="42" rx="8" fill="#ffe34d" stroke="#fff8c8" stroke-width="2"/><text x="24" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="900" fill="#111">QC</text><circle cx="37" cy="37" r="5" fill="#9cff20" stroke="#111" stroke-width="1.5"/><path d="M34 37h6m-3-3v6m-4-5-2-2m10 2 2-2" stroke="#111" stroke-width="1.3" stroke-linecap="round"/></svg><span>ADD QC ICON<span class="sub">HOME SCREEN / DESKTOP</span></span></button>
-</nav>
-<div class="status"><span class="version">QUOTE CHALLENGE 6.5</span><span class="counter" id="deviceCounter" aria-live="polite">THIS BROWSER: LOCAL MARKER</span></div>
-<div class="coming-marquee"><div class="marquee-heading">COMING IN DECEMBER</div><div class="movie-flipper" id="movieFlipper"><div class="movie-face" id="movieTitle">LOGAN'S RUN</div><div class="poster-face"><img src="poster.png" alt="Logan's Run movie poster"></div></div></div>
-<div class="next-wrap"><a href="next.html" class="next-button">NOSTALGIC JOURNEY<span>THROUGH HERE 👇</span></a></div>
-<section class="poster-wall" aria-labelledby="wallTitle"><h2 class="wall-title" id="wallTitle">SPECIAL FEATURES ON THE WALL</h2><div class="poster-display"><figure class="poster-card"><img src="assets/harry-mudd.png" alt="Star Trek Harry Mudd poster"><figcaption class="plaque"><strong>HARRY MUDD · STAR TREK</strong><span>1967</span></figcaption></figure><figure class="poster-card"><img src="assets/uhura.jpg" alt="Retro portrait poster of Lieutenant Uhura aboard the Enterprise, inviting viewers to journey to the stars."><figcaption class="plaque"><strong>STAR TREK: THE ORIGINAL SERIES</strong><span>1966</span></figcaption></figure></div><p class="poster-note">Two special posters for the theater wall, set among the movie title plaques and years already hanging around the entrance.</p></section>
-<aside class="wall-trivia" aria-label="Movie years"><button class="movie-plaque" data-egg="movie-1968" data-points="5" data-label="2001: A Space Odyssey">2001: A Space Odyssey<small>1968</small></button><div class="movie-plaque">Butch Cassidy and the Sundance Kid<small>1969</small></div></aside>
-<section class="poster-wall" aria-labelledby="libraryTitle"><h2 class="wall-title" id="libraryTitle">MOVIES, SHOWS &amp; QUOTES</h2><p id="libraryStatus" role="status">Loading the collection…</p><ul id="movieList"></ul></section>
-<p class="footer-note">Add an icon to your home screen or desktop for quick access.</p>
-<div class="freddie-hideout"><button class="freddie-egg chair" data-egg="freddie" data-points="25" data-label="You petted Freddie!" aria-label="Pet Freddie"><img src="assets/freddie-chair.jpg" alt="Freddie"></button></div>
+<main>
+  <section class="moon-stage" aria-label="Quote Challenge lunar outpost">
+    <svg class="moon-backdrop" viewBox="0 0 1648 928" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <radialGradient id="skyGlow" cx="50%" cy="32%" r="65%">
+          <stop offset="0%" stop-color="#1d3563"/>
+          <stop offset="55%" stop-color="#081022"/>
+          <stop offset="100%" stop-color="#02040a"/>
+        </radialGradient>
+        <radialGradient id="earthGlow" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#8be0ff"/>
+          <stop offset="45%" stop-color="#2a72c8"/>
+          <stop offset="85%" stop-color="#0d2654"/>
+          <stop offset="100%" stop-color="#050d20"/>
+        </radialGradient>
+        <linearGradient id="moonGround" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#7c8799"/>
+          <stop offset="35%" stop-color="#4e5869"/>
+          <stop offset="100%" stop-color="#1e2430"/>
+        </linearGradient>
+        <linearGradient id="domeShell" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#3c5e8a" stop-opacity="0.72"/>
+          <stop offset="60%" stop-color="#152744" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#0a1324" stop-opacity="0.96"/>
+        </linearGradient>
+        <linearGradient id="airlockGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#9be2ff" stop-opacity="0.32"/>
+          <stop offset="50%" stop-color="#173863" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#081426" stop-opacity="0.95"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Deep space sky -->
+      <rect width="1648" height="928" fill="url(#skyGlow)"/>
+
+      <!-- Stars -->
+      <g fill="#ffffff" opacity="0.85">
+        <circle cx="95" cy="88" r="1.8"/><circle cx="190" cy="140" r="1.2"/><circle cx="315" cy="70" r="2.1"/>
+        <circle cx="440" cy="125" r="1.4"/><circle cx="590" cy="60" r="1.7"/><circle cx="715" cy="115" r="1.2"/>
+        <circle cx="845" cy="52" r="2.2"/><circle cx="980" cy="98" r="1.5"/><circle cx="1125" cy="64" r="1.9"/>
+        <circle cx="1260" cy="145" r="1.3"/><circle cx="1395" cy="82" r="2.0"/><circle cx="1540" cy="135" r="1.6"/>
+        <circle cx="130" cy="310" r="1.5"/><circle cx="285" cy="380" r="1.2"/><circle cx="1370" cy="295" r="1.8"/>
+        <circle cx="1510" cy="365" r="1.4"/><circle cx="70" cy="480" r="1.6"/><circle cx="1585" cy="490" r="1.9"/>
+        <circle cx="390" cy="230" r="1.3"/><circle cx="1210" cy="215" r="1.5"/>
+      </g>
+
+      <!-- Earth in the lunar sky -->
+      <circle cx="220" cy="195" r="78" fill="#4faeff" opacity="0.18"/>
+      <circle cx="220" cy="195" r="62" fill="url(#earthGlow)"/>
+      <path d="M180 165c18-10 38-6 46 8 6 11-5 24 6 33 10 8 24 3 32 14-8 16-24 27-44 29-18-5-34-18-42-37-4-16-2-33 2-47z" fill="#b7f0ff" opacity="0.45"/>
+
+      <!-- Distant lunar ridge -->
+      <path d="M0 680 Q190 610 390 665 T824 640 T1280 670 T1648 635 L1648 928 L0 928 Z" fill="#323b4a"/>
+
+      <!-- Main lunar surface -->
+      <path d="M0 735 Q280 700 540 730 T1120 725 T1648 740 L1648 928 L0 928 Z" fill="url(#moonGround)"/>
+
+      <!-- Lunar craters -->
+      <g opacity="0.7">
+        <ellipse cx="185" cy="825" rx="95" ry="26" fill="#272e3b" stroke="#8e9aad" stroke-width="2"/>
+        <ellipse cx="1430" cy="818" rx="115" ry="30" fill="#272e3b" stroke="#8e9aad" stroke-width="2"/>
+        <ellipse cx="420" cy="875" rx="58" ry="14" fill="#222834" stroke="#7c8799" stroke-width="1.5"/>
+        <ellipse cx="1220" cy="878" rx="64" ry="16" fill="#222834" stroke="#7c8799" stroke-width="1.5"/>
+        <ellipse cx="824" cy="885" rx="90" ry="18" fill="#202632" stroke="#7c8799" stroke-width="1.5"/>
+      </g>
+
+      <!-- Lunar Quote Outpost Dome -->
+      <path d="M405 815 C405 330, 1243 330, 1243 815 Z" fill="url(#domeShell)" stroke="#8ad3ff" stroke-width="3"/>
+      <path d="M470 815 C470 400, 1178 400, 1178 815" fill="none" stroke="#8ad3ff" stroke-opacity="0.28" stroke-width="2"/>
+      <path d="M620 815 C620 445, 1028 445, 1028 815" fill="none" stroke="#8ad3ff" stroke-opacity="0.22" stroke-width="2"/>
+      <line x1="824" y1="365" x2="824" y2="815" stroke="#8ad3ff" stroke-opacity="0.22" stroke-width="2"/>
+
+      <!-- Outpost base platform -->
+      <rect x="370" y="805" width="908" height="24" rx="10" fill="#18253b" stroke="#7ab8e8" stroke-width="2"/>
+
+      <!-- Marquee sign on lunar dome -->
+      <rect x="574" y="295" width="500" height="62" rx="14" fill="#071224" stroke="#ffdf84" stroke-width="3"/>
+      <text x="824" y="335" text-anchor="middle" fill="#ffdf84" font-family="system-ui,Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="3">THE QUOTE GAME • MOON BASE</text>
+
+      <!-- Airlock 1 (aligned behind .door-one) -->
+      <rect x="536" y="402" width="237" height="406" rx="18" fill="url(#airlockGlow)" stroke="#9be2ff" stroke-width="3"/>
+      <rect x="556" y="424" width="197" height="362" rx="12" fill="none" stroke="#ffdf84" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="654" cy="545" r="46" fill="#08152b" stroke="#9be2ff" stroke-width="2.5"/>
+      <text x="654" y="556" text-anchor="middle" fill="#ffdf84" font-family="system-ui,Arial,sans-serif" font-size="32" font-weight="800">1P</text>
+      <text x="654" y="645" text-anchor="middle" fill="#d9f0ff" font-family="system-ui,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">SOLO POD</text>
+
+      <!-- Airlock 2 (aligned behind .door-two) -->
+      <rect x="872" y="402" width="227" height="406" rx="18" fill="url(#airlockGlow)" stroke="#9be2ff" stroke-width="3"/>
+      <rect x="892" y="424" width="187" height="362" rx="12" fill="none" stroke="#ffdf84" stroke-opacity="0.45" stroke-width="2"/>
+      <circle cx="985" cy="545" r="46" fill="#08152b" stroke="#9be2ff" stroke-width="2.5"/>
+      <text x="985" y="556" text-anchor="middle" fill="#ffdf84" font-family="system-ui,Arial,sans-serif" font-size="32" font-weight="800">2P</text>
+      <text x="985" y="645" text-anchor="middle" fill="#d9f0ff" font-family="system-ui,Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="2">DUO POD</text>
+    </svg>
+
+    <a class="door-link door-one" href="one-player.html" target="mainViewer" aria-label="Open one-player game in the main viewing panel" title="Lunar Bay 1 — Solo Challenge" data-label="LUNAR BAY 1 (SOLO)"></a>
+    <a class="door-link door-two" href="two-player.html" target="mainViewer" aria-label="Open two-player game in the main viewing panel" title="Lunar Bay 2 — Two-Player Challenge" data-label="LUNAR BAY 2 (DUO)"></a>
+  </section>
+
+  <div class="below-stage">
+    <nav class="navigation" aria-label="Site pages">
+      <h2>Mission menu</h2>
+      <p>Select a lunar module to open it on the main moonscreen.</p>
+      <div class="nav-links">
+        <a href="one-player.html" target="mainViewer">One-player challenge</a>
+        <a href="two-player.html" target="mainViewer">Two-player challenge</a>
+        <a href="home-panel.html" target="mainViewer">Home</a>
+        <a href="box_robot.html" target="mainViewer" class="feature-slot">Lunch Room</a>
+        <a href="lunatic_fringe.html" target="mainViewer" class="feature-slot">Gone Crazy</a>
+        <a href="qc-marquee.html" target="mainViewer" class="feature-slot">The Old Marquee</a>
+        <a href="bonus.html" target="mainViewer" class="feature-slot">Free Stuff</a>
+        <a href="Making_arun.html" target="mainViewer" class="feature-slot">Making the Run</a>
+        <a href="home-panel.html" target="mainViewer" class="feature-slot">Second Home</a>
+        <a href="Creatos.html" target="mainViewer" class="feature-slot">Meet Creatos</a>
+        <a href="fastrounde.html" target="mainViewer" class="feature-slot">Impossible Five</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 09</a>
+        <a href="#" target="mainViewer" class="feature-slot">Feature 10</a>
+      </div>
+      <h2 style="margin-top:20px">Picture projector</h2>
+      <div class="picture-links" aria-label="Picture shortcuts">
+        <button type="button" class="picture-slot" data-image="logan-poster.png">Logan's Run poster</button>
+        <button type="button" class="picture-slot" data-image="theater-day.png">Old theater (day)</button>
+        <button type="button" class="picture-slot" data-image="theater-night.png">Old theater (night)</button>
+      </div>
+    </nav>
+    <section class="viewer-panel" aria-labelledby="viewerTitle">
+      <h2 id="viewerTitle">Main moonscreen</h2>
+      <iframe name="mainViewer" title="Selected Quote Challenge page" src="home-panel.html"></iframe>
+    </section>
+  </div>
 </main>
 <script>
 'use strict';
-// Start session timers after the page is parsed.
-setTimeout(()=>alert('ONE MINUTE LEFT! Wrap it up!'),14*60*1000);
-setTimeout(()=>{alert('15-MINUTE LIMIT REACHED. Session ended.');window.location.href='index.html';},15*60*1000);
-(() => {const titles=['COMING SOON','NEXT MONTH',"LOGAN'S RUN"];const title=document.getElementById('movieTitle');const flipper=document.getElementById('movieFlipper');if(!title||!flipper)return;let step=0;const timer=setInterval(()=>{title.textContent=titles[step%titles.length];step++;if(step>=titles.length*2){clearInterval(timer);title.textContent="LOGAN'S RUN";setTimeout(()=>flipper.classList.add('flipped'),1800)}},1200)})();
-async function loadCollection(){const status=document.getElementById('libraryStatus');try{const respons
 
-name: Validate 'setup-go'
+const mainViewer = document.querySelector('iframe[name="mainViewer"]');
+const viewerPanel = document.querySelector('.viewer-panel');
 
-on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**.md'
-  pull_request:
-    paths-ignore:
-      - '**.md'
-  schedule:
-    - cron: 0 0 * * *
+function showViewerMessage(title, message){
+  const doc = document.implementation.createHTMLDocument(title);
+  const style = doc.createElement('style');
+  style.textContent = 'body{margin:0;min-height:100vh;background:#03050b;color:#ffe7a0;font-family:system-ui,Arial,sans-serif;display:grid;place-items:center;text-align:center}main{padding:24px;width:min(680px,100%)}h1{color:#ffdf84}p{color:#c8d1e4;line-height:1.6}';
+  doc.head.append(style);
+  const main = doc.createElement('main');
+  const heading = doc.createElement('h1');
+  heading.textContent = title;
+  const paragraph = doc.createElement('p');
+  paragraph.textContent = message;
+  main.append(heading, paragraph);
+  doc.body.append(main);
+  mainViewer.removeAttribute('src');
+  mainViewer.srcdoc = '<!doctype html>' + doc.documentElement.outerHTML;
+}
 
-jobs:
-  stable:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go Stable
-        uses: ./
-        with:
-          go-version: stable
-      - name: Verify Go
-        run: go version
+function projectPicture(title, imagePath){
+  const doc = document.implementation.createHTMLDocument(title);
+  const style = doc.createElement('style');
+  style.textContent = 'body{margin:0;min-height:100vh;background:#03050b;color:#ffe7a0;font-family:system-ui,Arial,sans-serif;display:grid;place-items:center;text-align:center}main{padding:18px;width:100%;height:100vh;display:grid;place-items:center}img{max-width:100%;max-height:calc(100vh - 36px);object-fit:contain}p{padding:16px}';
+  doc.head.append(style);
+  const main = doc.createElement('main');
+  const img = doc.createElement('img');
+  img.alt = title;
+  img.src = new URL(imagePath, location.href).href;
+  img.addEventListener('error', () => {
+    const message = doc.createElement('p');
+    message.textContent = 'Picture not found: ' + imagePath;
+    img.replaceWith(message);
+  });
+  main.append(img);
+  doc.body.append(main);
+  mainViewer.removeAttribute('src');
+  mainViewer.srcdoc = '<!doctype html>' + doc.documentElement.outerHTML;
+}
 
-  oldstable:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go oldStable
-        uses: ./
-        with:
-          go-version: oldstable
-      - name: Verify Go
-        run: go version
+document.querySelectorAll('.picture-slot').forEach(button => {
+  button.addEventListener('click', () => {
+    const filename = button.dataset.image.trim();
+    if (!filename) {
+      showViewerMessage(button.textContent.trim(), 'Add an image filename to this picture button to use it.');
+    } else {
+      projectPicture(button.textContent.trim(), filename);
+    }
+    viewerPanel.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
 
-  go-env-outputs:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go
-        id: setup-go
-        uses: ./
-        with:
-          go-version: stable
-      - name: Show Go environment outputs
-        run: |
-          echo "GOPATH:       ${{ steps.setup-go.outputs.GOPATH }}"
-          echo "GOBIN:        ${{ steps.setup-go.outputs.GOBIN }}"
-          echo "go-bin-path:  ${{ steps.setup-go.outputs.go-bin-path }}"
-          echo "GOROOT:       ${{ steps.setup-go.outputs.GOROOT }}"
-          echo "GOCACHE:      ${{ steps.setup-go.outputs.GOCACHE }}"
-          echo "GOMODCACHE:   ${{ steps.setup-go.outputs.GOMODCACHE }}"
-          echo "GOOS:         ${{ steps.setup-go.outputs.GOOS }}"
-          echo "GOARCH:       ${{ steps.setup-go.outputs.GOARCH }}"
-          echo "GOTOOLDIR:    ${{ steps.setup-go.outputs.GOTOOLDIR }}"
-
-  aliases-arch:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-        version: [stable, oldstable]
-        architecture: [x64, x32]
-        exclude:
-          - os: macos-latest
-            architecture: x32
-          - os: macos-15-intel
-            architecture: x32
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go ${{ matrix.version }} ${{ matrix.architecture }}
-        uses: ./
-        with:
-          go-version: ${{ matrix.version }}
-          architecture: ${{ matrix.architecture }}
-      - name: Verify Go
-        run: go version
-
-  local-cache:
-    name: Setup local-cache version
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest, macos-15-intel]
-        go: [1.21.13, 1.22.8, 1.23.2]
-        include:
-          - os: windows-latest
-            go: 1.20.14
-        exclude:
-          - os: windows-latest
-            go: 1.23.2
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: setup-go ${{ matrix.go }}
-        uses: ./
-        with:
-          go-version: ${{ matrix.go }}
-
-      - name: verify go
-        run: __tests__/verify-go.sh ${{ matrix.go }}
-        shell: bash
-
-  check-latest:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-        go-version: ['1.20', '1.21', '1.22', '1.23']
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go and check latest
-        uses: ./
-        with:
-          go-version: ${{ matrix.go-version }}
-          check-latest: true
-      - name: Verify Go
-        run: go version
-
-  go-version-file:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go and check latest
-        uses: ./
-        with:
-          go-version-file: __tests__/data/go.mod
-      - name: verify go
-        run: __tests__/verify-go.sh 1.20.14
-        shell: bash
-
-  go-version-file-with-gowork:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go and check latest
-        uses: ./
-        with:
-          go-version-file: __tests__/data/go.work
-      - name: verify go
-        run: __tests__/verify-go.sh 1.21
-        shell: bash
-
-  go-version-file-with-tool-versions:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go and check latest
-        uses: ./
-        with:
-          go-version-file: __tests__/data/.tool-versions
-      - name: verify go
-        run: __tests__/verify-go.sh 1.23.2
-        shell: bash
-
-  go-version-file-with-go-version:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go from .go-version file
-        uses: ./
-        with:
-          go-version-file: __tests__/data/.go-version
-      - name: verify go
-        run: __tests__/verify-go.sh 1.22.4
-        shell: bash
-
-  setup-versions-from-manifest:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest, macos-15-intel]
-        go: [1.20.14, 1.21.10, 1.22.8, 1.23.2]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: setup-go ${{ matrix.go }}
-        uses: ./
-        with:
-          go-version: ${{ matrix.go }}
-
-      - name: verify go
-        run: __tests__/verify-go.sh ${{ matrix.go }}
-        shell: bash
-
-  setup-versions-from-dist:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [windows-latest, ubuntu-latest, macos-15-intel]
-        go: [1.11.12]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: setup-go ${{ matrix.go }}
-        uses: ./
-        with:
-          go-version: ${{ matrix.go }}
-
-      - name: verify go
-        run: __tests__/verify-go.sh ${{ matrix.go }}
-        shell: bash
-
-  architecture:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest, macos-15-intel]
-        go-version: [1.20.14, 1.21, 1.22, 1.23]
-        include:
-          - os: macos-latest
-            architecture: arm64
-          - os: ubuntu-latest
-            architecture: x64
-          - os: windows-latest
-            architecture: x64
-          - os: macos-15-intel
-            architecture: x64
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Go and check latest
-        uses: ./
-        with:
-          go-version: ${{ matrix.go-version }}
-          architecture: ${{ matrix.architecture }}
-      - name: Verify Go
-        run: go version
+// Keep unassigned feature slots in the moonscreen instead of navigating to the page top.
+document.querySelectorAll('a[target="mainViewer"]').forEach(link => {
+  link.addEventListener('click', event => {
+    const href = link.getAttribute('href');
+    if (!href || href === '#') {
+      event.preventDefault();
+      showViewerMessage(link.textContent.trim() || 'Feature coming soon', 'This lunar module is ready. Choose another feature or check back later.');
+      viewerPanel.scrollIntoView({behavior:'smooth',block:'start'});
+      return;
+    }
+    // Clear projected picture/message content so the iframe can navigate normally.
+    mainViewer.removeAttribute('srcdoc');
+  });
+});
+</script>
+</body>
+        </html>
