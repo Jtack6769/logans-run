@@ -2,14 +2,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#74463b">
 <meta name="description" content="Step inside Quote Challenge. Pick a ladder, find a favorite, and play."><link rel="manifest" href="./manifest.webmanifest">
-<title>Quote Challenge — Broadway Wall</title>
-  function logPersonsAge(name, age, wantsToRevealAge) {
-  if (wantsToRevealAge) {
-    console.log(name + " is " + age + " years old.");
-  } else {
-    console.log(name + " does not want to reveal their age.");
-  }
-}
+</head>title>QUOTE CHALLENGE ROCK THE WALLPAPER V1.0<title>
 <style>
 :root{color-scheme:dark;--cream:#f2e5c8;--gold:#d8b45c}*{box-sizing:border-box}
 body{margin:0;min-height:100vh;color:var(--cream);font-family:Georgia,"Times New Roman",serif;background-color:#74463b;background-image:linear-gradient(transparent 94%,#38231f55 95%),linear-gradient(90deg,transparent 48%,#38231f55 49%,transparent 50%),repeating-linear-gradient(0deg,transparent 0 54px,#c79a8125 55px 57px);background-size:100% 57px,160px 57px,100% 114px}
@@ -39,6 +32,13 @@ a{color:inherit}.page{width:min(100%,1120px);margin:auto;padding:clamp(10px,2.5v
 <script>'use strict';
 try{const key='qc_index_unique_device_521',badge=document.getElementById('deviceCounter');if(localStorage.getItem(key))badge.textContent='THIS DEVICE: ALREADY COUNTED';else{localStorage.setItem(key,'1');badge.textContent='THIS DEVICE: COUNTED'}}catch{}
 let installPrompt=null;window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event});
-document.getElementById('addIcon').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null}else alert('To add the Quote Challenge icon, open your browser menu and choose “Add to Home screen” or “Create shortcut.” This adds an icon to your device.')});
+document.getElementById('addIcon').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await 
+  function logPersonsAge(name, age, wantsToRevealAge) {
+  if (wantsToRevealAge) {
+    console.log(name + " is " + age + " years old.");
+  } else {
+    console.log(name + " does not want to reveal their age.");
+  }
+  }installPrompt.userChoice;installPrompt=null}else alert('To add the Quote Challenge icon, open your browser menu and choose “Add to Home screen” or “Create shortcut.” This adds an icon to your device.')});
 if('serviceWorker'in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script></body></html>
